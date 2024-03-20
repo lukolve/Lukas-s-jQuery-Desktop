@@ -1,0 +1,318 @@
+<html> 
+<title>HTML with PHP testing</title>
+<style>
+html, body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+ background-image: url(); 
+ overflow: hidden;
+}
+
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+/* Exo thin font from Google. */
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+/* Main styles */
+body {
+  margin-top: 1rem;
+  color: #999;
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 0.92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+body::before {
+  content: "";
+  font-size: 4rem;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.testa {
+  content: "";
+  font-size: 4rem;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.testb {
+  content: "";
+  font-size: 2rem;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* The Modal (background) */
+.modal,
+.modal-music,
+.modal-photos,
+.modal-videos {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close,
+.close-music,
+.close-photos,
+.close-videos {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.close-music:hover,
+.close-music:focus,
+.close-photos:hover,
+.close-photos:focus,
+.close-videos:hover,
+.close-videos:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+.modal::backdrop,
+.modal-music::backdrop,
+.modal-photos::backdrop,
+.modal-videos::backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.thumbs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px;
+  max-width: 100%;
+}
+.thumbs > a {
+  max-width: 150px;
+  height: 150px;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px white, 0 5px 8px 3px rgba(0, 0, 0, 0.6);
+}
+.thumbs > a img {
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+  filter: grayscale(50%);
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.thumbs > a:hover img {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.lightbox {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.lightbox:has(div:target) {
+  transform: translateY(0%);
+  opacity: 1;
+}
+.lightbox a.nav {
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+  opacity: 0.5;
+  font-weight: 200;
+}
+.lightbox a.nav:hover {
+  opacity: 1;
+}
+.lightbox .target {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  transform: scale(0);
+  align-items: center;
+  justify-content: space-between;
+}
+.lightbox .target *:first-child, .lightbox .target *:last-child {
+  flex: 0 0 100px;
+  text-align: center;
+}
+@media all and (max-width: 600px) {
+  .lightbox .target *:first-child, .lightbox .target *:last-child {
+    flex: 0 0 50px;
+  }
+}
+.lightbox .target .content {
+  transform: scale(0.9);
+  opacity: 0;
+  flex: 1 1 auto;
+  align-self: center;
+  max-height: 100%;
+  min-height: 0;
+  min-width: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 0 3px white, 0 5px 8px 3px rgba(0, 0, 0, 0.6);
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+.lightbox .target .content img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: calc(100vh - 40px);
+  display: block;
+  margin: 0;
+}
+.lightbox .target:target {
+  transform: scale(1);
+}
+.lightbox .target:target .content {
+  transform: scale(1);
+  opacity: 1;
+}
+.lightbox .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+</style>
+<body>
+
+<h1>
+<div class="testa"><?php echo getHostName(); ?></div>
+<div class="testb"><br>This is web desktop interface created special for some reason, where you can
+browse internet, listen music and use all stored data on your local file server.
+</div>
+</h1>
+
+</body>
+</html>

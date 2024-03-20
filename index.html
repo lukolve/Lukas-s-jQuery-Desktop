@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="description" content="JavaScript desktop environment built with jQuery." />
+<title>Lukas's jQuery Desktop</title>
+<!--[if lt IE 7]>
+<script>
+window.top.location = 'http://desktop.sonspring.com/ie.html';
+</script>
+<![endif]-->
+<link rel="stylesheet" href="assets/css/reset.css" />
+
+<link rel="stylesheet" href="assets/css/index.css" />
+
+<link rel="stylesheet" href="assets/css/desktop.css" />
+<link rel="stylesheet" href="assets/css/snackbar.css" />
+<link rel="stylesheet" href="assets/css/contextmenu.css" />
+<link rel="stylesheet" href="assets/css/themes.css" />
+<link rel="stylesheet" href="assets/css/iconmenu.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui-1.8.17.custom.min.js"></script>
+<script type="text/javascript" src="assets/js/modernizr.js"></script>
+<script type="text/javascript" src="assets/js/fix-and-clock.js"></script>
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="assets/css/ie.css" />
+<![endif]-->
+
+<style>
+:root {
+    --background: #1a1a2e;
+    --color: #ffffff;
+    --primary-color: #0f3460;
+}
+
+* {
+  box-sizing: border-box;
+  cursor: default;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  font: 12px/1 'Lucida Grande', Arial, 'Liberation Sans', FreeSans, sans-serif;
+	background: var(--background);
+    color: var(--color);
+    letter-spacing: 1px;
+    transition: background 0.2s ease;
+    -webkit-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    -ms-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+}
+
+:fullscreen, ::backdrop {
+    background: var(--background);
+    color: var(--color);
+}
+
+#urlDIV {
+	display: none;
+}
+</style>
+
+</head>
+<body onload="myNotify('Welcome to itemDesktop..')">
+	
+<!-- DESKTOP -->
+<div class="abs" id="wrapper">
+  <div class="abs" id="desktop">
+
+		<a class="abs icon" style="left:20px;top:20px;" href="#icon_dock_computer">
+			<!--img src="assets/images/icons/icon_32_computer.png" /!-->
+			Open URL..
+		</a>
+		
+		<a class="abs icon" style="left:20px;top:60px;" href="#icon_dock_files">
+			<!--img src="assets/images/icons/icon_32_computer.png" /!-->
+			Browse files..
+		</a>
+		
+		<a class="abs icon" style="left:20px;top:100px;" href="#icon_dock_about">
+			<!--img src="assets/images/icons/icon_32_computer.png" /!-->
+			About this..
+		</a>
+
+		<!-- Open URL.ap !-->
+		<div id="window_computer" class="abs window">
+		<div class="abs window_inner">
+        <div class="window_top">
+          <span class="float_left">
+            <img src="assets/images/icons/icon_16_computer.png" />
+            Open URL..
+          </span>
+          <span class="float_right">
+            <a href="#" class="window_min"></a>
+            <a href="#" class="window_resize"></a>
+            <a href="#icon_dock_computer" class="window_close"></a>
+          </span>
+        </div>
+        <div class="abs window_content">
+          <div class="window_aside">
+            Hello. You look nice today!
+          </div>
+          <div class="window_main">
+			Hello. You look nice today!
+          </div>
+        </div>
+        <div class="abs window_bottom">
+          Build: TK421
+        </div>
+		</div>
+			<span class="abs ui-resizable-handle ui-resizable-se"></span>
+		</div>
+		
+		<!-- Computer.ap !-->
+		<div id="window_files" class="abs window">
+		<div class="abs window_inner">
+        <div class="window_top">
+          <span class="float_left">
+            <img src="assets/images/icons/icon_16_computer.png" />
+            Browse files..
+          </span>
+          <span class="float_right">
+            <a href="#" class="window_min"></a>
+            <a href="#" class="window_resize"></a>
+            <a href="#icon_dock_computer" class="window_close"></a>
+          </span>
+        </div>
+        <div class="abs window_content">
+          <div class="window_aside">
+            Browse files..
+          </div>
+          <div class="window_main">
+            <table class="data">
+              <thead>
+                <tr>
+                  <th class="shrink">
+                    &nbsp;
+                  </th>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    Date Modified
+                  </th>
+                  <th>
+                    Date Created
+                  </th>
+                  <th>
+                    Size
+                  </th>
+                  <th>
+                    Kind
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="assets/images/icons/icon_16_drive.png" />
+                  </td>
+                  <td>
+                    Hard Drive
+                  </td>
+                  <td>
+                    Today
+                  </td>
+                  <td>
+                    &mdash;
+                  </td>
+                  <td>
+                    200 GB
+                  </td>
+                  <td>
+                    Volume
+                  </td>
+                </tr>
+				
+                <tr>
+                  <td>
+                    <img src="assets/images/icons/icon_16_network.png" />
+                  </td>
+                  <td>
+                    Network
+                  </td>
+                  <td>
+                    &mdash;
+                  </td>
+                  <td>
+                    &mdash;
+                  </td>
+                  <td>
+                    &mdash;
+                  </td>
+                  <td>
+                    LAN
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="assets/images/icons/icon_16_folder_remote.png" />
+                  </td>
+                  <td>
+                    Shared Project Files
+                  </td>
+                  <td>
+                    Yesterday
+                  </td>
+                  <td>
+                    12/29/08
+                  </td>
+                  <td>
+                    524 MB
+                  </td>
+                  <td>
+                    Folder
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="abs window_bottom">
+          Build: TK421
+        </div>
+		</div>
+			<span class="abs ui-resizable-handle ui-resizable-se"></span>
+		</div>
+
+		
+		<!-- About.ap !-->
+		<div id="window_about" class="abs window" style="width:800px; height:480px;">
+		<div class="abs window_inner">
+        <div class="window_top">
+          <span class="float_left">
+            <img style="width:16px; height:16px;" src="assets/images/icons/icon_settings.png" />
+            About this..
+          </span>
+          <span class="float_right">
+            <a href="#" class="window_min"></a>
+            <a href="#icon_dock_about" class="window_close"></a>
+          </span>
+        </div>
+        <div class="abs window_content">
+		<div class="window_aside">
+            <p><b>About</b><br />Windowing System based on jQuery Desktop<br/></p>
+			<p><b>Original Sources at GitHub</b><br /><a href="https://github.com/nathansmith/jquery-desktop/">jQuery Desktop</a><br /></p>
+			<p><b>Forked Sources at GitHub</b><br /><a href="https://github.com/lukolve">itemDesktop jQuery Desktop</a><br /></p>
+			<p><b>Credits</b><br />Forked by Lukas Veselovsky<br /></p>
+			</div>
+          <div class="window_main">
+			<iframe src="about.html" width="600px" height="410px" style="border:none;"></iframe>
+          </div>
+        </div>
+        <div class="abs window_bottom">
+          Build: TK421
+        </div>
+		</div>
+			<span class="abs ui-resizable-handle ui-resizable-se"></span>
+		</div>
+		
+	<!-- Global Panel !-->
+		<div class="abs" id="bar_bottom_text">
+    
+		<ul id="dock">
+		<li id="icon_dock_computer">
+        <a href="#window_computer">
+			Open URL..
+        </a>
+		</li>
+		<li id="icon_dock_files">
+        <a href="#window_files">
+			Browse files..
+        </a>
+		</li>
+		<li id="icon_dock_about">
+        <a href="#window_about">
+			About this..
+		</a>
+		</li>
+		</ul>
+
+		</div>	
+	
+		<div id="urlDIV">
+		</div>
+  
+  <!-- context menu !-->
+  <div id="context-menu">
+      <div class="item" id="myBtnSettings">Settings</div>
+      <div class="item" id="go-button">Enable Full Screen</div>
+  </div>
+  
+  <!-- context icon menu !-->
+  <div id="icon-menu">
+      <div class="item" id="">Exec</div>
+      <div class="item" id="">Share</div>
+	  <div class="item" id="">Delete</div>
+	  <div class="item" id="">More info..</div>
+  </div>
+
+  
+  <!-- Themes !-->
+  <div class="theme-btn-container"></div>
+  
+  <!-- Notifications !-->
+  <div id="snackbar"></div>
+  
+  <!-- Clock !-->
+  <a span class="float_right" style="margin-right:20px;margin-top:20px;" id="clock"></a>
+
+</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script>
+  !window.jQuery && document.write(unescape('%3Cscript src="assets/js/jquery.js"%3E%3C/script%3E'));
+  !window.jQuery && document.write(unescape('%3Cscript src="assets/js/jquery.ui.js"%3E%3C/script%3E'));
+</script>
+<script src="assets/js/jquery.desktop.js"></script>
+<script>
+function myNotify(str) {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  x.innerHTML = str;
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+<script src="assets/js/jquery.desktop.extras.js"></script>
+<script src="assets/js/themes.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+.video-container{
+    width:100%;
+    margin:0 auto;
+    padding:20px 0;
+    text-align:center;
+    background:red;
+    height:auto;
+}
+
+.video{
+    width:40%;
+    display:inline-block;
+}
+
+.video div {
+    width:100%;
+    height:0;
+    padding-bottom:56.25%;
+    position:relative;
+    display:inline-block;
+    box-sizing:border-box;
+    
+}
+.video iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+ .video-text{
+     width:50%;
+     margin:0 auto;
+ }
+ 
